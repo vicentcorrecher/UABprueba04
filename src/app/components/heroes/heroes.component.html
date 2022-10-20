@@ -1,7 +1,12 @@
 <div class="container mt-5">
-    <div class="row row-cols-3">
-        <div *ngFor="let item of array">
+    <div class="row-inline-block">
+    <h1 class="fw-bolder"> Héroes </h1>
+    <h2 class="fw-light"> Marvel y DC</h2>
+    </div>
 
+
+    <div class="row row-cols-3 mt-5">
+        <div *ngFor="let item of array">
             <div class="card-deck">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src={{item.img}} alt="Card image cap">
@@ -14,6 +19,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
