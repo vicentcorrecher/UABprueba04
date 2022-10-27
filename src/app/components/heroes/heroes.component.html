@@ -1,10 +1,5 @@
 <div class="container mt-5">
-    <div class="row-inline-block">
-    <h1 class="fw-bolder"> Héroes </h1>
-    <h2 class="fw-light"> Marvel y DC</h2>
-    </div>
-
-
+    <h1 class="fw-bolder">Héroes <small class="fw-light">Marvel y DC</small></h1>
     <div class="row row-cols-3 mt-5">
         <div *ngFor="let item of array">
             <div class="card-deck">
@@ -14,7 +9,7 @@
                         <h5 class="card-title">{{item.nombre }} </h5>
                         <p class="card-text">{{item.bio}}</p>
                         <p class="card-text"><small class="text-muted">{{item.aparicion}}</small></p>
-                        <a href="#" class="btn btn-outline-primary">Ver más...</a>
+                        <a [routerLink]="['/Heroe/', item.id]" class="btn btn-outline-primary btn-block">Ver más...</a>
                     </div>
                 </div>
             </div>

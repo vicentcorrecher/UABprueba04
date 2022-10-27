@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  selector: 'app-heroe',
+  templateUrl: './heroe.component.html',
+  styleUrls: ['./heroe.component.css']
 })
-export class HeroesComponent implements OnInit {
+export class HeroeComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+
+
   array=[
     {
       id:1,
@@ -68,5 +68,31 @@ export class HeroesComponent implements OnInit {
       aparicion: "1974-11-01",
       casa: "Marvel"
     }
+
   ];
+
+  
+  nombre:any;
+  id:any;
+  aparicion:any;
+  imagen:any;
+  biog:any;
+  house: any;
+
+  constructor(private route: ActivatedRoute) { }
+  
+  ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('id'); 
+    for(let i=0; i<this.array.length; i++){
+      if(this.id == this.array[i].id){
+        this.nombre = this.array[i].nombre;
+        this.aparicion = this.array[i].aparicion;
+        this.imagen = this.array[i].img;
+        this.biog = this.array[i].bio;
+        this.house = this.array[i].casa;
+      }
+    }
+  };
 }
+
+
