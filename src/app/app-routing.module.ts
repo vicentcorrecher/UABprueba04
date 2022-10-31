@@ -7,12 +7,12 @@ import { HeroeComponent } from './components/heroe/heroe.component';
 
 
 const routes: Routes = [
-  {path:"" ,component:HeroesComponent},
+  {path:"" ,component:HomeComponent},
   {path:"Heroes" ,component:HeroesComponent},
   {path:"Heroe/:id", component:HeroeComponent},
   {path:"Home" ,component:HomeComponent},
   {path:"About" ,component:AboutComponent},
-  {path:"**", component:HeroesComponent}
+  {path:"**", component:HomeComponent}
 ];
 
 @NgModule({
