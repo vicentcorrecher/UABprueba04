@@ -82,9 +82,9 @@ export class HeroeComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
   
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id'); 
+    this.id = this.route.snapshot.paramMap.get('nombre'); 
     for(let i=0; i<this.array.length; i++){
-      if(this.id == this.array[i].id){
+      if(this.array[i].nombre.toLowerCase().indexOf(this.id.toLowerCase())>=0){
         this.nombre = this.array[i].nombre;
         this.aparicion = this.array[i].aparicion;
         this.imagen = this.array[i].img;

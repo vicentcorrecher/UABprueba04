@@ -9,7 +9,7 @@ import { HeroeComponent } from './components/heroe/heroe.component';
 const routes: Routes = [
   {path:"" ,component:HomeComponent},
   {path:"Heroes" ,component:HeroesComponent},
-  {path:"Heroe/:id", component:HeroeComponent},
+  {path:"Heroe/:nombre", component:HeroeComponent},
   {path:"Home" ,component:HomeComponent},
   {path:"About" ,component:AboutComponent},
   {path:"**", component:HomeComponent}
