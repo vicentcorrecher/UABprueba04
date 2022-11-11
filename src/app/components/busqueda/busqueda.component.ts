@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-busqueda',
@@ -7,10 +9,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusquedaComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   array=[
     {
@@ -71,4 +69,29 @@ export class BusquedaComponent implements OnInit {
     }
   ];
 
+  routeBusq: any; // 
+ arraymultipleBusq: {Name:string, Img: string, Bio: String, Aparicion: string }[]= [];  // array de objetos
+
+  constructor(private route: ActivatedRoute, private router:Router) { }
+  contador = 0;
+  ngOnInit(): void {
+    this.routeBusq = this.route.snapshot.paramMap.get('nombre');
+    
+    for(let i=0; i< this.array.length; i++){
+      if (this.array[i].nombre.toLowerCase().indexOf(this.routeBusq.toLowerCase()) >= 0){
+        this.contador ++;
+        this.arraymultipleBusq.push({
+          Name: this.array[i].nombre,
+          Img: this.array[i].img,
+          Bio: this.array[i].bio,
+          Aparicion: this.array[i].aparicion
+        } )
+      }
+    }
+    console.log(this.contador);
+    if(this.contador==1){
+      this.router.navigate(['/Heroe/', this.routeBusq]);
+    }
+
+  }
 }

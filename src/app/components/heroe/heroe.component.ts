@@ -8,9 +8,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeroeComponent implements OnInit {
 
-
-
-
   array=[
     {
       id:1,
@@ -84,7 +81,7 @@ export class HeroeComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('nombre'); 
     for(let i=0; i<this.array.length; i++){
-      if(this.array[i].nombre.toLowerCase().indexOf(this.id.toLowerCase())>=0){
+      if(this.array[i].nombre.toLowerCase().indexOf(this.id.toLowerCase())==0){
         this.nombre = this.array[i].nombre;
         this.aparicion = this.array[i].aparicion;
         this.imagen = this.array[i].img;

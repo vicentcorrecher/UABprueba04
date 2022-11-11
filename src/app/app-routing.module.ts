@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:"Heroe/:nombre", component:HeroeComponent},
   {path:"Home" ,component:HomeComponent},
   {path:"About" ,component:AboutComponent},
-  {path:"Busqueda", component:BusquedaComponent},
+  {path:"Busqueda/:nombre", component:BusquedaComponent},
   {path:"**", component:HomeComponent}
 ];
 
